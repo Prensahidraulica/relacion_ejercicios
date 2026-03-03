@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Moneda extends Azar{
 
-    public Moneda() {
-        super();
+    public Moneda(int posibilidades) {
+        super(posibilidades);
     }
 
     @Override

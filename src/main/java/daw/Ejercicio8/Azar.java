@@ -4,6 +4,7 @@ public abstract class Azar {
     protected int posibilidades;
     public abstract int lanzar();
     
-    public Azar() {
+    public Azar(int posibilidades) {
+        this.posibilidades = posibilidades;
     }
 }

@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Dado extends Azar{
 
-    public Dado() {
-        super();
+    public Dado(int posibilidades) {
+        super(posibilidades);
     }
 
     @Override
