@@ -32,22 +32,20 @@ public class CuentaAhorro extends Cuenta {
     // Método toString
     @Override
     public String toString() {
-        return "CuentaAhorro [interesVariable=" + interesVariable + ", comisionAnual=" + comisionAnual + "]";
+        return "CuentaAhorro [Interes Variable = " + interesVariable + ", Comisión Anual = " + comisionAnual + "]";
     }
 
     // Método para añadir saldo a la cuenta
     @Override
     public void actualizarSaldo(double cantidad) {
-        double interes = saldo * (interesVariable / 100);
-        saldo += interes;
-        saldo -= comisionAnual;
+        saldo = (saldo + (saldo * interesVariable)) - comisionAnual;
     }
 
     // Método para quitar saldo a la cuenta
     @Override
     public void retirar(double cantidad) {
-        if (cantidad <= saldo) {
-            saldo -= cantidad;
+        if (cantidad <= getSaldo()) {
+            setSaldo(getSaldo() - cantidad);
         } else {
             System.out.println("Saldo insuficiente.");
         }

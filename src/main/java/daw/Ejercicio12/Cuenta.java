@@ -10,11 +10,11 @@ public abstract class Cuenta {
 
     // Constructor parametrizado
     public Cuenta(Persona cliente) {
-        this.saldo = 0;
+        this.saldo = 0.0;
         this.cliente = cliente;
 
         RandomStringUtils generador = RandomStringUtils.secure();
-        this.numeroCuenta = generador.next(20);
+        this.numeroCuenta = generador.nextNumeric(20);
     }
 
     // Getters y Setters

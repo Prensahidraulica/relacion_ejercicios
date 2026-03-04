@@ -32,17 +32,19 @@ public class CuentaCorriente extends Cuenta {
     }
 
     // Método para añadir saldo a la cuenta
-    @Override
-    public void actualizarSaldo(double cantidad) {
-        double interes = saldo * interesFijo;
-        saldo += interes;
+    public void actualizarSaldo(double valor) {
+        if (saldo > 1000) {
+            saldo = saldo + (saldoMinimo * interesFijo);
+        } else {
+            saldo = saldo + (saldo * interesFijo);
+        }
     }
 
     // Método para quitar saldo a la cuenta
     @Override
     public void retirar(double cantidad) {
-        if (saldo - cantidad >= saldoMinimo) {
-            saldo -= cantidad;
+        if (getSaldo() - cantidad >= saldoMinimo) {
+            setSaldo(getSaldo() - cantidad);
         } else {
             System.out.println("No se puede retirar. Se alcanzaría el saldo mínimo.");
         }
